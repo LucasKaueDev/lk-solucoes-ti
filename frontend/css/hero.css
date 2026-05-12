@@ -7,7 +7,7 @@
 
   overflow: hidden;
 
-  padding: 120px 0 80px;
+  padding: 140px 0 80px;
 
   border-bottom: 1px solid rgba(17, 150, 243, 0.18);
 
@@ -47,11 +47,9 @@
 .particle-canvas {
   position: absolute;
   inset: 0;
-
   width: 100%;
   height: 100%;
-
-  opacity: 0.55;
+  opacity: 0.7;
 }
 
 .hero__grid {
@@ -67,11 +65,11 @@
 }
 
 .hero__conteudo {
-  max-width: 640px;
+  max-width: 1920px;
 }
 
 .hero__conteudo h1 {
-  font-size: clamp(3rem, 6vw, 5.5rem);
+ font-size: clamp(2.2rem, 4vw, 4rem);
 
   line-height: 0.95;
 
@@ -82,6 +80,7 @@
   color: #ffffff;
 
   text-wrap: balance;
+  
 }
 
 .hero__conteudo h1 span {
@@ -93,13 +92,13 @@
 }
 
 .hero__conteudo p {
-  max-width: 540px;
+  max-width: 1920px;
 
-  margin-top: 24px;
+  margin: 40px 0;
 
   color: rgba(244, 247, 251, 0.86);
 
-  font-size: 1.05rem;
+  font-size: 1.25rem;
 
   line-height: 1.7;
 }
@@ -108,9 +107,9 @@
   display: flex;
   flex-wrap: wrap;
 
-  gap: 18px;
+  gap: 25px;
 
-  margin-top: 34px;
+  margin-top: 20px;
 }
 
 .arrow-down {
@@ -167,7 +166,7 @@
   .hero__conteudo {
     text-align: center;
 
-    margin: 0 auto;
+    margin: auto;
   }
 
   .hero__conteudo p {
