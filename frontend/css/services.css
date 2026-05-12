@@ -1,0 +1,82 @@
+.services {
+  background: linear-gradient(180deg, rgba(3, 9, 19, 0.98), rgba(4, 13, 26, 0.98));
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.service-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 86px 1fr;
+  min-height: 112px;
+  align-items: center;
+  padding: 18px 24px;
+  overflow: hidden;
+  border: 1px solid rgba(17, 150, 243, 0.2);
+  border-radius: 12px;
+  background:
+    radial-gradient(circle at 12% 50%, rgba(17, 150, 243, 0.11), transparent 34%),
+    linear-gradient(135deg, rgba(8, 23, 40, 0.96), rgba(5, 16, 29, 0.94));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(17, 150, 243, 0.64);
+  box-shadow: 0 0 28px rgba(17, 150, 243, 0.2), inset 0 0 22px rgba(17, 150, 243, 0.08);
+}
+
+.service-icon {
+  position: relative;
+  display: grid;
+  width: 62px;
+  height: 62px;
+  place-items: center;
+  border: 1px solid rgba(17, 150, 243, 0.28);
+  border-radius: 18px;
+  background: rgba(17, 150, 243, 0.06);
+  box-shadow: inset 0 0 18px rgba(17, 150, 243, 0.08);
+}
+
+.service-icon::before,
+.service-icon::after {
+  position: absolute;
+  content: "";
+  border-color: var(--blue-main);
+}
+
+.service-card h3 {
+  max-width: 240px;
+  margin-bottom: 7px;
+  font-size: 1.03rem;
+}
+
+.service-card p {
+  max-width: 250px;
+  color: rgba(244, 247, 251, 0.7);
+  font-size: 0.82rem;
+}
+
+.icon-laptop::before { width: 36px; height: 24px; border: 3px solid var(--blue-main); border-radius: 2px; }
+.icon-laptop::after { width: 45px; height: 3px; bottom: 13px; background: var(--blue-main); box-shadow: 0 0 14px var(--blue-main); }
+.icon-headset::before { width: 34px; height: 34px; border: 3px solid var(--blue-main); border-bottom: 0; border-radius: 22px 22px 0 0; }
+.icon-headset::after { width: 42px; height: 22px; border: 3px solid var(--blue-main); border-top: 0; border-radius: 0 0 8px 8px; }
+.icon-megaphone::before { width: 34px; height: 24px; border: 3px solid var(--blue-main); border-radius: 50% 6px 6px 50%; transform: skewY(-8deg); }
+.icon-megaphone::after { width: 13px; height: 26px; right: 13px; border-right: 4px solid var(--blue-main); }
+.icon-palette::before { width: 38px; height: 38px; border: 3px solid var(--blue-main); border-radius: 50%; }
+.icon-palette::after { width: 6px; height: 6px; border-radius: 50%; background: var(--blue-main); box-shadow: 12px 2px 0 var(--blue-main), -8px 9px 0 var(--blue-main), 4px 15px 0 var(--blue-main); }
+.icon-image::before { width: 38px; height: 30px; border: 3px solid var(--blue-main); border-radius: 4px; }
+.icon-image::after { width: 22px; height: 14px; bottom: 17px; border-left: 3px solid var(--blue-main); border-bottom: 3px solid var(--blue-main); transform: rotate(45deg); }
+.icon-globe::before { width: 39px; height: 39px; border: 3px solid var(--blue-main); border-radius: 50%; }
+.icon-globe::after { width: 39px; height: 18px; border-top: 3px solid var(--blue-main); border-bottom: 3px solid var(--blue-main); }
+.icon-cart::before { width: 38px; height: 26px; border-left: 3px solid var(--blue-main); border-bottom: 3px solid var(--blue-main); transform: skewX(-12deg); }
+.icon-cart::after { width: 7px; height: 7px; bottom: 11px; border-radius: 50%; background: var(--blue-main); box-shadow: 26px 0 0 var(--blue-main); }
+.icon-rocket::before { width: 38px; height: 20px; border: 3px solid var(--blue-main); border-radius: 50% 50% 50% 10px; transform: rotate(-38deg); }
+.icon-rocket::after { width: 18px; height: 18px; border-left: 3px solid var(--blue-main); border-bottom: 3px solid var(--blue-main); transform: rotate(8deg); }
+.icon-chart::before { width: 7px; height: 18px; bottom: 16px; left: 17px; background: var(--blue-main); box-shadow: 14px -10px 0 var(--blue-main), 28px -22px 0 var(--blue-main); }
+.icon-chart::after { width: 42px; height: 34px; border-left: 3px solid var(--blue-main); border-bottom: 3px solid var(--blue-main); }
