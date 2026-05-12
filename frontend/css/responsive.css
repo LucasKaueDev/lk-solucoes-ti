@@ -1,0 +1,76 @@
+@media (min-width: 1500px) {
+  :root {
+    --container: min(1380px, calc(100% - 70px));
+  }
+}
+
+@media (max-width: 1180px) {
+  .navegacao {
+    gap: 24px;
+  }
+
+  .navegacao__links {
+    gap: 24px;
+  }
+
+  .sobre__painel {
+    grid-template-columns: 1fr;
+  }
+
+  .container__imagem {
+    min-height: 320px;
+  }
+
+  .portfolio-track {
+    grid-template-columns: repeat(3, minmax(210px, 1fr));
+    overflow-x: auto;
+  }
+}
+
+@media (max-width: 860px) {
+  :root {
+    --container: min(100% - 28px, 1220px);
+  }
+
+  .section {
+    padding: 48px 0;
+  }
+
+  .estatistica {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio-arrow {
+    display: none;
+  }
+
+  .portfolio-track {
+    grid-template-columns: repeat(5, minmax(220px, 1fr));
+    overflow-x: auto;
+  }
+}
+
+@media (max-width: 540px) {
+  h1 {
+    font-size: 2.45rem;
+  }
+
+  h2 {
+    font-size: 1.72rem;
+  }
+
+  .container__imagem {
+    min-height: 220px;
+  }
+
+  .whatsapp-float {
+    right: 16px;
+    bottom: 16px;
+    width: 56px;
+    height: 56px;
+  }
+}
