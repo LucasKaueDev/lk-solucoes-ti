@@ -163,13 +163,9 @@
   line-height: 1.7;
 }
 
-/* =========================
-   RESPONSIVIDADE
-========================= */
-
 @media (max-width: 900px) {
-  .site-footer {
-    margin-top: 70px;
+  .site-footer {\n    margin-top: 70px;
+
   }
 
   .footer-grid {
@@ -233,10 +229,6 @@
     gap: 10px;
   }
 }
-
-/* =========================
-   RESPONSIVIDADE
-========================= */
 
 @media (max-width: 900px) {
   .site-footer {
@@ -318,10 +310,6 @@
     gap: 10px;
   }
 }
-
-/* =========================
-   MOBILE PEQUENO
-========================= */
 
 @media (max-width: 480px) {
   .footer-grid {
