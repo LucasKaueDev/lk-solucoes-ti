@@ -1,47 +1,80 @@
 .contato {
-    background: rgba(3, 9, 19, 0.98);
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at top center,
+            rgba(17,150,243,0.06),
+            transparent 35%
+        ),
+
+        linear-gradient(
+            to bottom,
+            rgba(2,7,15,0.98),
+            rgba(1,4,10,1)
+        );
 }
 
 .contato__grid {
     display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: 40px;
+    grid-template-columns: 1fr 0.92fr;
+
+    gap: 70px;
     align-items: center;
 }
 
-.contato__info h2 {
-    margin: 18px 0;
+/* TEXTO */
 
-    font-size: clamp(2rem, 3vw, 2.8rem);
-    line-height: 1.2;
+.contato__info h2 {
+    max-width: 760px;
+
+    margin: 18px 0 24px;
+
+    font-size: clamp(2.4rem, 3.5vw, 3.8rem);
+    line-height: 1.1;
 }
 
-.contato__info p {
+.contato__descricao {
+    max-width: 680px;
+
     color: rgba(255,255,255,0.72);
 
     font-size: 1.05rem;
-    line-height: 1.7;
+    line-height: 1.9;
 }
+
+/* CARDS */
 
 .contato__cards {
     display: flex;
     flex-direction: column;
+
     gap: 18px;
 
-    margin-top: 36px;
+    margin-top: 42px;
 }
 
 .contato__card {
     display: flex;
     align-items: center;
-    gap: 18px;
 
-    padding: 20px;
+    gap: 22px;
 
-    border: 1px solid rgba(17,150,243,0.18);
-    border-radius: 18px;
+    min-height: 96px;
 
-    background: rgba(5,18,33,0.9);
+    padding: 24px 26px;
+
+    border: 1px solid rgba(17,150,243,0.14);
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(5,18,33,0.95),
+            rgba(2,10,22,0.95)
+        );
 
     text-decoration: none;
 
@@ -54,44 +87,38 @@
 .contato__card:hover {
     transform: translateY(-4px);
 
-    border-color: rgba(17,150,243,0.55);
+    border-color: rgba(17,150,243,0.5);
 
     box-shadow:
-        0 0 24px rgba(17,150,243,0.14);
+        0 0 32px rgba(17,150,243,0.14);
 }
 
-.contato__card strong {
-    display: block;
-
-    margin-bottom: 4px;
-
-    color: var(--white);
-
-    font-size: 1rem;
-}
-
-.contato__card span {
-    color: rgba(255,255,255,0.72);
-}
+/* ÍCONES */
 
 .contato__icone {
     display: flex;
     align-items: center;
     justify-content: center;
 
-    width: 58px;
-    height: 58px;
+    width: 72px;
+    height: 72px;
 
-    border-radius: 16px;
-
-    font-size: 1.3rem;
+    border-radius: 20px;
 
     flex-shrink: 0;
+}
+
+.contato__icone svg {
+    width: 34px;
+    height: 34px;
 }
 
 .whatsapp {
     background: rgba(37,211,102,0.12);
     color: #25d366;
+
+    box-shadow:
+        0 0 18px rgba(37,211,102,0.12);
 }
 
 .email {
@@ -104,60 +131,166 @@
     color: var(--white);
 }
 
-.contato__cta {
-    padding: 42px 36px;
+.contato__texto {
+    display: flex;
+    flex-direction: column;
+}
 
-    border: 1px solid rgba(17,150,243,0.22);
+.contato__texto strong {
+    margin-bottom: 6px;
+
+    color: var(--white);
+
+    font-size: 1.05rem;
+}
+
+.contato__texto span {
+    color: rgba(255,255,255,0.72);
+
+    font-size: 1rem;
+}
+
+/* CTA */
+
+.contato__cta {
+    position: relative;
+
+    padding: 48px 42px;
+
+    border: 1px solid rgba(17,150,243,0.18);
     border-radius: 28px;
 
     background:
         radial-gradient(
             circle at top right,
             rgba(17,150,243,0.18),
-            transparent 35%
+            transparent 38%
         ),
-        rgba(5,18,33,0.96);
+
+        linear-gradient(
+            135deg,
+            rgba(5,18,33,0.96),
+            rgba(3,11,22,0.98)
+        );
 
     box-shadow:
-        0 0 30px rgba(17,150,243,0.12);
+        0 0 30px rgba(17,150,243,0.08);
+}
+
+.contato__cta::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    border-radius: inherit;
+
+    padding: 1px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(17,150,243,0.4),
+            transparent 40%
+        );
+
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite: xor;
+
+    pointer-events: none;
 }
 
 .contato__cta h3 {
     margin: 18px 0;
 
-    font-size: 2rem;
-    line-height: 1.3;
+    font-size: clamp(2rem, 3vw, 2.8rem);
+    line-height: 1.2;
 }
 
 .contato__cta p {
     color: rgba(255,255,255,0.72);
 
-    line-height: 1.7;
+    line-height: 1.9;
 }
+
+/* BOTÃO */
 
 .contato__botao {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
+
     gap: 12px;
 
-    margin-top: 28px;
+    min-height: 60px;
+
+    margin-top: 34px;
+
+    padding: 0 28px;
+
+    border-radius: 16px;
+
+    font-size: 1rem;
+    font-weight: 700;
+
+    box-shadow:
+        0 0 24px rgba(17,150,243,0.35);
 }
 
 .contato__botao svg {
     color: #25d366;
 }
 
-@media (max-width: 900px) {
+/* RESPONSIVO */
+
+@media (max-width: 1024px) {
+
     .contato__grid {
         grid-template-columns: 1fr;
+
+        gap: 48px;
     }
 
+    .contato__info,
     .contato__cta {
         text-align: center;
     }
 
+    .contato__descricao,
+    .contato__info h2 {
+        max-width: 100%;
+    }
+
     .contato__botao {
         width: 100%;
-        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .contato__info h2 {
+        font-size: 2.3rem;
+    }
+
+    .contato__cta {
+        padding: 36px 28px;
+    }
+
+    .contato__card {
+        padding: 18px;
+    }
+
+    .contato__icone {
+        width: 62px;
+        height: 62px;
+    }
+
+    .contato__icone svg {
+        width: 28px;
+        height: 28px;
     }
 }

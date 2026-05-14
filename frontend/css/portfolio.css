@@ -1,293 +1,169 @@
 .portfolio {
-    background: rgba(3, 9, 19, 0.98);
+  background: rgba(3, 9, 19, 0.98);
 }
 
-/* =========================
-   CASCA DO PORTFÓLIO
-========================= */
-
 .portfolio__casca {
-    position: relative;
-    display: grid;
-    grid-template-columns: 52px 1fr 52px;
-    gap: 16px;
-    align-items: center;
+  position: relative;
+  display: grid;
+  grid-template-columns: 52px 1fr 52px;
+  align-items: center;
+  gap: 16px;
 }
 
 .portfolio__trilha {
-    display: flex;
-    gap: 20px;
-    overflow-x: auto;
-    padding: 10px 4px;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-
-    scrollbar-width: thin;
-    scrollbar-color: var(--blue-main) transparent;
+  display: flex;
+  gap: 20px;
+  padding: 10px 4px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scrollbar-color: var(--blue-main) transparent;
+  scrollbar-width: thin;
 }
 
 .portfolio__trilha::-webkit-scrollbar {
-    height: 8px;
+  height: 8px;
 }
 
 .portfolio__trilha::-webkit-scrollbar-thumb {
-    background: var(--blue-main);
-    border-radius: 999px;
+  border-radius: 999px;
+  background: var(--blue-main);
 }
 
-/* =========================
-   BOTÕES
-========================= */
-
 .portfolio__botao {
-    border: 0;
-    background: transparent;
-    cursor: pointer;
-
-    color: var(--blue-main);
-
-    font-size: 4rem;
-    line-height: 1;
-
-    transition: 220ms ease;
-
-    text-shadow: 0 0 18px rgba(17, 150, 243, 0.72);
+  border: 0;
+  color: var(--blue-main);
+  background: transparent;
+  cursor: pointer;
+  font-size: 4rem;
+  line-height: 1;
+  text-shadow: 0 0 18px rgba(17, 150, 243, 0.72);
+  transition: 220ms ease;
 }
 
 .portfolio__botao:hover {
-    transform: scale(1.1);
-    color: #59b9ff;
+  color: #59b9ff;
+  transform: scale(1.1);
 }
 
-/* =========================
-   CARDS
-========================= */
-
 .projeto__card {
-    min-width: 300px;
-
-    overflow: hidden;
-
-    border: 1px solid rgba(17, 150, 243, 0.2);
-    border-radius: 18px;
-
-    background: rgba(5, 15, 28, 0.95);
-
-    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.24);
-
-    scroll-snap-align: start;
-
-    transition:
-        transform 220ms ease,
-        border-color 220ms ease,
-        box-shadow 220ms ease;
+  min-width: 300px;
+  overflow: hidden;
+  border: 1px solid rgba(17, 150, 243, 0.2);
+  border-radius: 18px;
+  background: rgba(5, 15, 28, 0.95);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.24);
+  scroll-snap-align: start;
+  transition:
+    transform 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease;
 }
 
 .projeto__card:hover {
-    transform: translateY(-5px);
-
-    border-color: rgba(17, 150, 243, 0.62);
-
-    box-shadow:
-        0 0 28px rgba(17, 150, 243, 0.2),
-        0 12px 24px rgba(0, 0, 0, 0.3);
+  border-color: rgba(17, 150, 243, 0.62);
+  box-shadow:
+    0 0 28px rgba(17, 150, 243, 0.2),
+    0 12px 24px rgba(0, 0, 0, 0.3);
+  transform: translateY(-5px);
 }
 
 .projeto__card h3 {
-    padding: 18px 14px;
-
-    text-align: center;
-
-    font-size: 1rem;
-    font-weight: 700;
-
-    color: var(--white);
+  padding: 18px 14px;
+  color: var(--white);
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: center;
 }
-
-/* =========================
-   PREVIEWS
-========================= */
 
 .projeto__preview {
-    min-height: 180px;
+  min-height: 180px;
 }
-
-/* SITE */
 
 .site-preview {
-    background:
-        linear-gradient(rgba(255,255,255,0.12) 0 0)
-        18px 20px / 44% 8px no-repeat,
-
-        linear-gradient(rgba(255,255,255,0.09) 0 0)
-        18px 40px / 72% 6px no-repeat,
-
-        linear-gradient(rgba(255,255,255,0.12) 0 0)
-        18px 68px / 82% 42px no-repeat,
-
-        linear-gradient(
-            135deg,
-            rgba(17, 150, 243, 0.36),
-            rgba(4, 12, 23, 0.96)
-        );
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.12) 0 0) 18px 20px / 44% 8px no-repeat,
+    linear-gradient(rgba(255, 255, 255, 0.09) 0 0) 18px 40px / 72% 6px no-repeat,
+    linear-gradient(rgba(255, 255, 255, 0.12) 0 0) 18px 68px / 82% 42px no-repeat,
+    linear-gradient(135deg, rgba(17, 150, 243, 0.36), rgba(4, 12, 23, 0.96));
 }
-
-/* LOJA */
 
 .loja-preview {
-    background:
-        radial-gradient(
-            circle at 80% 25%,
-            rgba(255,255,255,0.5),
-            transparent 12%
-        ),
-
-        linear-gradient(rgba(255,255,255,0.14) 0 0)
-        18px 18px / 70% 12px no-repeat,
-
-        repeating-linear-gradient(
-            90deg,
-            rgba(255,255,255,0.14) 0 34px,
-            transparent 34px 44px
-        ),
-
-        linear-gradient(
-            135deg,
-            #2512a8,
-            var(--blue-main)
-        );
+  background:
+    radial-gradient(circle at 80% 25%, rgba(255, 255, 255, 0.5), transparent 12%),
+    linear-gradient(rgba(255, 255, 255, 0.14) 0 0) 18px 18px / 70% 12px no-repeat,
+    repeating-linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.14) 0 34px,
+      transparent 34px 44px
+    ),
+    linear-gradient(135deg, #2512a8, var(--blue-main));
 }
 
-/* LANDING PAGE */
-
 .lp-preview {
-    display: grid;
-    place-items: center;
-
-    background:
-        radial-gradient(
-            circle at 50% 70%,
-            rgba(17,150,243,0.7),
-            transparent 32%
-        ),
-
-        linear-gradient(
-            135deg,
-            #07111f,
-            #0d2f60
-        );
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at 50% 70%, rgba(17, 150, 243, 0.7), transparent 32%),
+    linear-gradient(135deg, #07111f, #0d2f60);
 }
 
 .lp-preview::after {
-    content: "SUA MARCA";
-
-    color: var(--white);
-
-    font-size: 1.4rem;
-    font-weight: 900;
-
-    text-shadow: 0 0 22px rgba(17,150,243,0.9);
+  content: "SUA MARCA";
+  color: var(--white);
+  font-size: 1.4rem;
+  font-weight: 900;
+  text-shadow: 0 0 22px rgba(17, 150, 243, 0.9);
 }
-
-/* BRANDING */
 
 .branding-preview {
-    background:
-        linear-gradient(
-            135deg,
-            rgba(255,255,255,0.5),
-            transparent 12%
-        )
-        18px 22px / 70px 44px no-repeat,
-
-        linear-gradient(
-            135deg,
-            rgba(255,255,255,0.32),
-            transparent 12%
-        )
-        104px 58px / 90px 56px no-repeat,
-
-        linear-gradient(
-            135deg,
-            #050b14,
-            #2c3038
-        );
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.5), transparent 12%) 18px 22px / 70px 44px no-repeat,
+    linear-gradient(135deg, rgba(255, 255, 255, 0.32), transparent 12%) 104px 58px / 90px 56px no-repeat,
+    linear-gradient(135deg, #050b14, #2c3038);
 }
 
-/* BANNERS */
-
 .banner-preview {
-    display: grid;
-    place-items: center;
-
-    background:
-        radial-gradient(
-            circle at 72% 48%,
-            rgba(255,255,255,0.16),
-            transparent 24%
-        ),
-
-        linear-gradient(
-            135deg,
-            #141414,
-            #3a2b02
-        );
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at 72% 48%, rgba(255, 255, 255, 0.16), transparent 24%),
+    linear-gradient(135deg, #141414, #3a2b02);
 }
 
 .banner-preview::after {
-    content: "PROMOÇÃO";
-
-    color: #ffe65a;
-
-    font-size: 1.3rem;
-    font-weight: 900;
+  content: "PROMOÇÃO";
+  color: #ffe65a;
+  font-size: 1.3rem;
+  font-weight: 900;
 }
 
-/* SOFTWARE */
-
 .software-preview {
-    display: grid;
-    place-items: center;
-
-    background:
-        radial-gradient(
-            circle at center,
-            rgba(17,150,243,0.18),
-            transparent 45%
-        ),
-
-        linear-gradient(
-            135deg,
-            #071018,
-            #101d36
-        );
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at center, rgba(17, 150, 243, 0.18), transparent 45%),
+    linear-gradient(135deg, #071018, #101d36);
 }
 
 .software-preview::after {
-    content: "</>";
-
-    font-size: 3rem;
-    font-weight: 900;
-
-    color: var(--blue-main);
-
-    text-shadow: 0 0 18px rgba(17,150,243,0.8);
+  content: "</>";
+  color: var(--blue-main);
+  font-size: 3rem;
+  font-weight: 900;
+  text-shadow: 0 0 18px rgba(17, 150, 243, 0.8);
 }
 
-/* =========================
-   RESPONSIVO
-========================= */
-
 @media (max-width: 768px) {
-    .portfolio__casca {
-        grid-template-columns: 1fr;
-    }
+  .portfolio__casca {
+    grid-template-columns: 1fr;
+  }
 
-    .portfolio__botao {
-        display: none;
-    }
+  .portfolio__botao {
+    display: none;
+  }
 
-    .projeto__card {
-        min-width: 260px;
-    }
+  .projeto__card {
+    min-width: 260px;
+  }
 }

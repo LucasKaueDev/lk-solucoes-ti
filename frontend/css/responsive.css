@@ -1,76 +1,243 @@
-@media (min-width: 1500px) {
-  :root {
-    --container: min(1380px, calc(100% - 70px));
-  }
+/* =========================================================
+   DESKTOP GRANDE / ULTRAWIDE
+========================================================= */
+
+@media (min-width: 1440px) {
+
+    :root {
+        --container: min(1320px, calc(100% - 80px));
+    }
+
+    .hero__grid,
+    .sobre__painel,
+    .contato__grid {
+        gap: 80px;
+    }
+
+    h1 {
+        font-size: clamp(4rem, 5vw, 5.5rem);
+    }
+
+    h2 {
+        font-size: clamp(2.8rem, 4vw, 4rem);
+    }
 }
+
+/* =========================================================
+   NOTEBOOK / TABLET GRANDE
+========================================================= */
 
 @media (max-width: 1180px) {
-  .navegacao {
-    gap: 24px;
-  }
 
-  .navegacao__links {
-    gap: 24px;
-  }
+    .navegacao {
+        gap: 24px;
+    }
 
-  .sobre__painel {
-    grid-template-columns: 1fr;
-  }
+    .navegacao__links {
+        gap: 22px;
+    }
 
-  .container__imagem {
-    min-height: 320px;
-  }
+    .hero__grid,
+    .sobre__painel,
+    .contato__grid {
+        gap: 48px;
+    }
 
-  .portfolio-track {
-    grid-template-columns: repeat(3, minmax(210px, 1fr));
-    overflow-x: auto;
-  }
+    .sobre__painel {
+        grid-template-columns: 1fr;
+    }
+
+    .container__imagem {
+        min-height: 320px;
+    }
+
+    .cta-inner {
+        padding: 36px;
+    }
+
+    .portfolio__casca {
+        grid-template-columns: 1fr;
+    }
+
+    .portfolio__botao {
+        display: none;
+    }
 }
 
-@media (max-width: 860px) {
-  :root {
-    --container: min(100% - 28px, 1220px);
-  }
+/* =========================================================
+   TABLETS
+========================================================= */
 
-  .section {
-    padding: 48px 0;
-  }
+@media (max-width: 1024px) {
 
-  .estatistica {
-    grid-template-columns: 1fr;
-  }
+    :root {
+        --container: min(100% - 40px, 1220px);
+    }
 
-  .portfolio-shell {
-    grid-template-columns: 1fr;
-  }
+    .hero__grid,
+    .contato__grid {
+        grid-template-columns: 1fr;
+    }
 
-  .portfolio-arrow {
-    display: none;
-  }
+    .hero__conteudo,
+    .hero-visual {
+        text-align: center;
+    }
 
-  .portfolio-track {
-    grid-template-columns: repeat(5, minmax(220px, 1fr));
-    overflow-x: auto;
-  }
+    .hero__acoes {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .estatistica {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .lista__servicos {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    :root {
+        --container: min(100% - 28px, 1220px);
+    }
+
+    .section {
+        padding: 70px 0;
+    }
+
+    h1 {
+        font-size: clamp(2.5rem, 8vw, 3.5rem);
+        line-height: 1.15;
+    }
+
+    h2 {
+        font-size: clamp(1.8rem, 6vw, 2.5rem);
+        line-height: 1.2;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .hero {
+        min-height: auto;
+        padding-top: 120px;
+    }
+
+    .hero__grid {
+        gap: 50px;
+    }
+
+    .hero__acoes {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .lista__servicos,
+    .estatistica {
+        grid-template-columns: 1fr;
+    }
+
+    .portfolio__trilha {
+        gap: 16px;
+    }
+
+    .projeto__card {
+        min-width: 260px;
+    }
+
+    .cta-inner {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .btn-neon {
+        width: 100%;
+        max-width: 340px;
+    }
+}
+
+/* =========================================================
+   MOBILE PEQUENO
+========================================================= */
 
 @media (max-width: 540px) {
-  h1 {
-    font-size: 2.45rem;
-  }
 
-  h2 {
-    font-size: 1.72rem;
-  }
+    h1 {
+        font-size: 2.2rem;
+    }
 
-  .container__imagem {
-    min-height: 220px;
-  }
+    h2 {
+        font-size: 1.65rem;
+    }
 
-  .whatsapp-float {
-    right: 16px;
-    bottom: 16px;
-    width: 56px;
-    height: 56px;
-  }
+    .hero {
+        padding-top: 110px;
+    }
+
+    .hero__acoes {
+        gap: 14px;
+    }
+
+    .service-card,
+    .estatistica__card,
+    .projeto__card,
+    .contato__card {
+        padding: 18px;
+    }
+
+    .container__imagem {
+        min-height: 220px;
+    }
+
+    .portfolio__trilha {
+        padding-bottom: 12px;
+    }
+
+    .whatsapp-float {
+        right: 16px;
+        bottom: 16px;
+
+        width: 56px;
+        height: 56px;
+    }
+}
+
+/* =========================================================
+   TV / 4K
+========================================================= */
+
+@media (min-width: 1920px) {
+
+    :root {
+        --container: min(1480px, calc(100% - 120px));
+    }
+
+    body {
+        font-size: 18px;
+    }
+
+    h1 {
+        font-size: 5.5rem;
+    }
+
+    h2 {
+        font-size: 4rem;
+    }
+
+    .section {
+        padding: 120px 0;
+    }
 }

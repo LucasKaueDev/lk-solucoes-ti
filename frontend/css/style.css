@@ -203,6 +203,17 @@ p {
   animation: pulse 1.4s ease-in-out infinite;
 }
 
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.06);
+  }
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
