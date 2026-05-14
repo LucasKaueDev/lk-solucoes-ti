@@ -1,0 +1,262 @@
+.site-footer {
+    position: relative;
+    overflow: hidden;
+
+    margin-top: 100px;
+
+    border-top: 1px solid rgba(17,150,243,0.12);
+
+    background:
+        radial-gradient(
+            circle at top center,
+            rgba(17,150,243,0.08),
+            transparent 35%
+        ),
+
+        linear-gradient(
+            to bottom,
+            rgba(3,9,19,0.98),
+            rgba(1,4,10,1)
+        );
+}
+
+.site-footer::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 70%;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            to right,
+            transparent,
+            rgba(17,150,243,0.8),
+            transparent
+        );
+}
+
+/* GRID */
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 0.8fr 1fr;
+
+    gap: 40px;
+
+    padding: 65px 0;
+}
+
+/* EMPRESA */
+
+.footer-logo {
+    width: 260px;
+
+    margin-bottom: 24px;
+
+    filter:
+        drop-shadow(
+            0 0 18px rgba(17,150,243,0.25)
+        );
+}
+
+.footer__empresa p {
+    max-width: 390px;
+
+    color: rgba(255,255,255,0.72);
+
+    line-height: 2;
+
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+/* REDES */
+
+.footer__redes {
+    display: flex;
+    gap: 16px;
+
+    margin-top: 32px;
+}
+
+.footer__redes a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 125px;
+    height: 50px;
+
+    border-radius: 14px;
+
+    color: var(--white);
+
+    text-decoration: none;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(17,150,243,0.12),
+            rgba(255,255,255,0.02)
+        );
+
+    border: 1px solid rgba(17,150,243,0.22);
+
+    backdrop-filter: blur(10px);
+
+    font-size: 0.95rem;
+    font-weight: 600;
+
+    transition:
+        transform 220ms ease,
+        border-color 220ms ease,
+        box-shadow 220ms ease,
+        color 220ms ease;
+}
+
+.footer__redes a:hover {
+    transform: translateY(-4px);
+
+    border-color: rgba(17,150,243,0.65);
+
+    box-shadow:
+        0 0 18px rgba(17,150,243,0.18);
+
+    color: #59b9ff;
+}
+
+/* LINKS E CONTATO */
+
+.footer__links,
+.footer__contato {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer__links h3,
+.footer__contato h3 {
+    position: relative;
+
+    width: fit-content;
+
+    margin-bottom: 28px;
+
+    padding-bottom: 12px;
+
+    color: var(--white);
+
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.footer__links h3::after,
+.footer__contato h3::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 42px;
+    height: 2px;
+
+    border-radius: 999px;
+
+    background: var(--blue-main);
+
+    box-shadow:
+        0 0 12px rgba(17,150,243,0.7);
+}
+
+.footer__links a,
+.footer__contato a,
+.footer__contato span {
+    width: fit-content;
+
+    margin-bottom: 16px;
+
+    color: rgba(255,255,255,0.72);
+
+    text-decoration: none;
+
+    line-height: 1.9;
+
+    font-weight: 400;
+
+    transition:
+        color 220ms ease,
+        transform 220ms ease,
+        text-shadow 220ms ease;
+}
+
+.footer__links a:hover,
+.footer__contato a:hover {
+    color: #59b9ff;
+
+    text-shadow:
+        0 0 12px rgba(17,150,243,0.8);
+
+    transform: translateX(4px);
+}
+
+/* COPYRIGHT */
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.06);
+
+    background: rgba(0,0,0,0.18);
+
+    padding: 30px 0;
+}
+
+.footer-bottom__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    color: rgba(255,255,255,0.55);
+
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+/* RESPONSIVO */
+
+@media (max-width: 900px) {
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+
+        padding: 60px 0;
+    }
+
+    .footer-bottom__content {
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+    .footer__empresa p {
+        max-width: 100%;
+    }
+
+    .footer__redes {
+        flex-wrap: wrap;
+    }
+
+    .footer-logo {
+        width: 220px;
+    }
+}
