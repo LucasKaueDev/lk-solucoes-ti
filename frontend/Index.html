@@ -75,36 +75,95 @@
   </header>
 
   <main>
-    <section class="hero" id="inicio">
-      <canvas class="particle-canvas" id="particleCanvas" aria-hidden="true"></canvas>
+<section class="hero" id="inicio">
 
-      <div class="hero__grid container">
-        <div class="hero__conteudo revelar">
-          <h1>Transformamos <span>tecnologia</span> em soluções <br> para o seu negócio.</h1>
-          <p>Suporte técnico, desenvolvimento web, identidade visual e soluções digitais completas para empresas.</p>
+  <canvas
+    class="particle-canvas"
+    id="particleCanvas"
+    aria-hidden="true">
+  </canvas>
 
-          <div class="hero__acoes">
-            <a
-              class="btn btn-primary btn-glow"
-              href="https://wa.me/5511988159801?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20LK%20Solu%C3%A7%C3%B5es%20de%20T.I%20e%20quero%20falar%20sobre%20um%20projeto."
-              target="_blank"
-              rel="noopener"
-            >
-              <span class="btn-icon"></span>
-              Falar no WhatsApp
-            </a>
+  <div class="hero__grid container">
 
-            <a class="btn btn-secondary" href="#servicos">
-              Conheça nossos serviços <span class="arrow-down">↓</span>
-            </a>
-          </div>
-        </div>
+    <!-- CONTEÚDO -->
+    <div class="hero__conteudo revelar">
 
-        <div class="hero-visual reveal delay-1" aria-hidden="true">
-          <img src="assets/images/laptop iluminado.png" alt="Laptop com demonstração de serviços da LK Soluções de T.I">
-        </div>
+      <h1>
+        Transformamos
+        <span>tecnologia</span>
+        em soluções
+        para o seu negócio.
+      </h1>
+
+      <p>
+        Suporte técnico, desenvolvimento web, identidade visual
+        e soluções digitais completas para empresas.
+      </p>
+
+      <!-- BOTÕES -->
+      <div class="hero__acoes">
+
+        <!-- WHATSAPP -->
+        <a
+          class="btn btn-primary btn-glow"
+          href="https://wa.me/5511988159801?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20LK%20Solu%C3%A7%C3%B5es%20de%20T.I%20e%20quero%20falar%20sobre%20um%20projeto."
+          target="_blank"
+          rel="noopener"
+          aria-label="Falar no WhatsApp"
+        >
+
+          <svg
+            class="btn-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 32 32"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path d="M19.11 17.23c-.29-.14-1.72-.85-1.99-.94-.27-.1-.47-.14-.66.14-.19.29-.76.94-.93 1.13-.17.19-.34.22-.63.07-.29-.14-1.22-.45-2.32-1.45-.86-.77-1.44-1.72-1.61-2.01-.17-.29-.02-.45.13-.6.13-.13.29-.34.43-.51.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.07-.14-.66-1.58-.9-2.17-.24-.58-.48-.5-.66-.5h-.56c-.19 0-.51.07-.78.36-.27.29-1.03 1.01-1.03 2.46s1.06 2.86 1.21 3.06c.14.19 2.08 3.18 5.04 4.46.7.3 1.25.48 1.67.61.7.22 1.33.19 1.83.12.56-.08 1.72-.7 1.96-1.37.24-.67.24-1.25.17-1.37-.07-.12-.27-.19-.56-.34zM16.02 3C8.84 3 3 8.73 3 15.8c0 2.5.73 4.83 1.99 6.8L3 29l6.6-1.92c1.87 1 4 1.57 6.42 1.57 7.18 0 13.02-5.73 13.02-12.8C29.04 8.73 23.2 3 16.02 3zm0 23.33c-2.1 0-4.04-.56-5.72-1.52l-.41-.24-3.91 1.14 1.18-3.78-.27-.39a10.1 10.1 0 0 1-1.68-5.74c0-5.64 4.84-10.23 10.81-10.23 5.96 0 10.81 4.59 10.81 10.23s-4.85 10.53-10.81 10.53z"/>
+          </svg>
+
+          <span>Falar no WhatsApp</span>
+
+        </a>
+
+        <!-- SERVIÇOS -->
+        <a
+          class="btn btn-secondary"
+          href="#servicos"
+          aria-label="Conheça nossos serviços"
+        >
+
+          <span>Conheça nossos serviços</span>
+
+          <span
+            class="arrow-down"
+            aria-hidden="true"
+          >
+            ↓
+          </span>
+
+        </a>
+
       </div>
-    </section>
+
+    </div>
+
+    <!-- IMAGEM -->
+    <div
+      class="hero-visual reveal delay-1"
+      aria-hidden="true"
+    >
+
+      <img
+        src="assets/images/laptop iluminado.png"
+        alt="Laptop com demonstração de serviços da LK Soluções de T.I"
+      >
+
+    </div>
+
+  </div>
+
+</section>
 
     <section class="servicos section" id="servicos">
       <div class="container">

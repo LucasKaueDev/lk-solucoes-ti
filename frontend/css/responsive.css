@@ -13,14 +13,6 @@
     .contato__grid {
         gap: 80px;
     }
-
-    h1 {
-        font-size: clamp(4rem, 5vw, 5.5rem);
-    }
-
-    h2 {
-        font-size: clamp(2.8rem, 4vw, 4rem);
-    }
 }
 
 /* =========================================================
@@ -84,11 +76,6 @@
         text-align: center;
     }
 
-    .hero__acoes {
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
     .estatistica {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -112,37 +99,8 @@
         padding: 70px 0;
     }
 
-    h1 {
-        font-size: clamp(2.5rem, 8vw, 3.5rem);
-        line-height: 1.15;
-    }
-
-    h2 {
-        font-size: clamp(1.8rem, 6vw, 2.5rem);
-        line-height: 1.2;
-    }
-
-    p {
-        font-size: 1rem;
-    }
-
-    .hero {
-        min-height: auto;
-        padding-top: 120px;
-    }
-
     .hero__grid {
         gap: 50px;
-    }
-
-    .hero__acoes {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .btn {
-        width: 100%;
-        justify-content: center;
     }
 
     .lista__servicos,
@@ -174,22 +132,6 @@
 ========================================================= */
 
 @media (max-width: 540px) {
-
-    h1 {
-        font-size: 2.2rem;
-    }
-
-    h2 {
-        font-size: 1.65rem;
-    }
-
-    .hero {
-        padding-top: 110px;
-    }
-
-    .hero__acoes {
-        gap: 14px;
-    }
 
     .service-card,
     .estatistica__card,
@@ -227,14 +169,6 @@
 
     body {
         font-size: 18px;
-    }
-
-    h1 {
-        font-size: 5.5rem;
-    }
-
-    h2 {
-        font-size: 4rem;
     }
 
     .section {
