@@ -1,3 +1,5 @@
+document.documentElement.classList.add("js");
+
 const header = document.querySelector("#barra__navegacao");
 
 const menuButton = document.querySelector(".menu-toggle");
@@ -20,12 +22,28 @@ const portfolioCards = document.querySelectorAll(
     ".projeto__card"
 );
 
+const sections = document.querySelectorAll(
+    "main section[id]"
+);
+
+const revealElements = document.querySelectorAll(
+    ".reveal"
+);
+
+const particleCanvas = document.querySelector(
+    "#particleCanvas"
+);
+
 const currentYear = document.querySelector(
     "#currentYear"
 );
 
 const mobileNavigation = window.matchMedia(
     "(max-width: 768px)"
+);
+
+const reducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
 );
 
 /* =========================================================
@@ -110,6 +128,31 @@ const updateHeaderState = () => {
 
 };
 
+const updateActiveNavigationLink = () => {
+
+    let activeId = "";
+
+    sections.forEach((section) => {
+
+        const rect = section.getBoundingClientRect();
+
+        if (rect.top <= 160 && rect.bottom >= 160) {
+            activeId = section.id;
+        }
+
+    });
+
+    navigationLinks.forEach((link) => {
+
+        link.classList.toggle(
+            "ativo",
+            link.getAttribute("href") === `#${activeId}`
+        );
+
+    });
+
+};
+
 /* =========================================================
    RESPONSIVIDADE MENU
 ========================================================= */
@@ -152,6 +195,159 @@ const scrollPortfolio = (direction) => {
         left: direction * cardWidth,
         behavior: "smooth",
     });
+
+};
+
+/* =========================================================
+   ANIMAÇÕES DE ENTRADA
+========================================================= */
+
+const setupRevealAnimations = () => {
+
+    if (!revealElements.length) {
+        return;
+    }
+
+    if (reducedMotion.matches || !("IntersectionObserver" in window)) {
+
+        revealElements.forEach((element) => {
+            element.classList.add("is-visible");
+        });
+
+        return;
+
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+
+        entries.forEach((entry) => {
+
+            if (!entry.isIntersecting) {
+                return;
+            }
+
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+
+        });
+
+    }, { threshold: 0.16 });
+
+    revealElements.forEach((element) => {
+        observer.observe(element);
+    });
+
+};
+
+/* =========================================================
+   PARTÍCULAS HERO
+========================================================= */
+
+const setupHeroParticles = () => {
+
+    if (!particleCanvas || reducedMotion.matches) {
+        return;
+    }
+
+    const ctx = particleCanvas.getContext("2d");
+
+    if (!ctx) {
+        return;
+    }
+
+    let particles = [];
+    let width = 0;
+    let height = 0;
+    let animationFrame = 0;
+
+    const resizeCanvas = () => {
+
+        const ratio = Math.min(window.devicePixelRatio || 1, 2);
+        const rect = particleCanvas.getBoundingClientRect();
+
+        width = rect.width;
+        height = rect.height;
+
+        particleCanvas.width = Math.floor(width * ratio);
+        particleCanvas.height = Math.floor(height * ratio);
+
+        ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+
+        const count = Math.min(Math.floor(width / 28), 70);
+
+        particles = Array.from({ length: count }, () => ({
+            x: Math.random() * width,
+            y: Math.random() * height,
+            vx: (Math.random() - 0.5) * 0.45,
+            vy: (Math.random() - 0.5) * 0.45,
+            r: Math.random() * 1.8 + 0.6,
+        }));
+
+    };
+
+    const drawParticles = () => {
+
+        ctx.clearRect(0, 0, width, height);
+
+        particles.forEach((particle, index) => {
+
+            particle.x += particle.vx;
+            particle.y += particle.vy;
+
+            if (particle.x < 0 || particle.x > width) {
+                particle.vx *= -1;
+            }
+
+            if (particle.y < 0 || particle.y > height) {
+                particle.vy *= -1;
+            }
+
+            ctx.beginPath();
+            ctx.arc(particle.x, particle.y, particle.r, 0, Math.PI * 2);
+            ctx.fillStyle = "rgba(255, 255, 255, 0.72)";
+            ctx.fill();
+
+            for (let next = index + 1; next < particles.length; next += 1) {
+
+                const other = particles[next];
+                const dx = particle.x - other.x;
+                const dy = particle.y - other.y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+
+                if (distance < 130) {
+                    ctx.beginPath();
+                    ctx.moveTo(particle.x, particle.y);
+                    ctx.lineTo(other.x, other.y);
+                    ctx.strokeStyle = `rgba(17, 150, 243, ${1 - distance / 130})`;
+                    ctx.lineWidth = 0.7;
+                    ctx.stroke();
+                }
+
+            }
+
+        });
+
+        animationFrame = requestAnimationFrame(drawParticles);
+
+    };
+
+    window.addEventListener(
+        "resize",
+        resizeCanvas,
+        { passive: true }
+    );
+
+    reducedMotion.addEventListener("change", () => {
+
+        if (reducedMotion.matches) {
+            cancelAnimationFrame(animationFrame);
+            ctx.clearRect(0, 0, width, height);
+        }
+
+    });
+
+    resizeCanvas();
+    drawParticles();
 
 };
 
@@ -203,7 +399,10 @@ menuButton?.addEventListener(
 
 window.addEventListener(
     "scroll",
-    updateHeaderState,
+    () => {
+        updateHeaderState();
+        updateActiveNavigationLink();
+    },
     { passive: true }
 );
 
@@ -234,3 +433,9 @@ if (currentYear) {
 updateHeaderState();
 
 syncNavigationVisibility();
+
+updateActiveNavigationLink();
+
+setupRevealAnimations();
+
+setupHeroParticles();
